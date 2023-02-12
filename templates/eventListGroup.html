@@ -1,0 +1,40 @@
+{% extends 'base/headerConnect.html' %}
+
+{% block content %}
+        <section class="statistics2 text-center">
+        <div class="data2">
+            <div class="container">
+                 <button onclick="window.location.href = '/../panel/group/{{ group_id }}/create/event/';"type="button" class="btn btn-primary">Créer un nouvel événement</button>
+            </div>
+        </div>
+    </section>
+    <section id="advertisers" class="advertisers-service-sec pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="section-header text-center">
+                    <h2 class="fw-bold fs-1">
+                        Groupe: <br>
+                        <span class="b-class-secondary"> {{ theGroup.name }} </span> <br>
+                        Vous avez créer
+                        <span class="b-class-secondary"> {{ object_list.count }} </span>évenements dans ce groupe:
+                    </h2>
+                    <p class="sec-icon"><i class="fa-solid fa-gear"></i></p>
+                </div>
+            </div>
+            <div class="row mt-5 mt-md-4 row-cols-1 row-cols-sm-1 row-cols-md-3 justify-content-center">
+                {% for object in object_list %}
+                    <div class="col">
+                        <div class="service-card">
+                            <h3>{{ object.name }}</h3>
+                            <p>
+                                {{ object.description }}
+                            </p>
+                        <button onclick="window.location.href = '/../panel/group/{{ group_id }}/events/{{ object.id }}';"type="button" class="btn btn-primary">voir l'évènement</button>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

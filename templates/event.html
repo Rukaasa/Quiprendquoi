@@ -1,0 +1,24 @@
+{% extends 'base/headerConnect.html' %}
+{% block content %}
+            <section class="statistics2 text-center">
+        <div class="data2">
+            <div class="container">
+                 <button onclick="window.location.href = '/../item/create/{{ group_id }}/{{ event_id }}/';"type="button" class="btn btn-primary">Ajouter un objet</button>
+            </div>
+        </div>
+    </section>
+<div class="container my-5">
+  <h1 class="text-center">{{ group.name }}</h1>
+  <p class="text-center">{{ group.description }}</p>
+  <h1 class="text-center">{{ event.name }}</h1>
+  <p class="text-center">{{ event.description }}</p>
+  <h3 class="my-3">Liste des objets</h3>
+  <ul class="list-group">
+    {% for item in items %}
+      <li class="list-group-item">
+        <p>- {{ item.name }} ({{ item.user }}) </p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

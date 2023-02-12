@@ -1,0 +1,9 @@
+{% extends 'base/headerDisconnect.html' %}
+{% block content %}
+    <br>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Se connecter</button>
+</form>
+{% endblock %}

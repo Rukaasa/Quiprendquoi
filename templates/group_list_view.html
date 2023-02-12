@@ -1,0 +1,157 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/stats.css' %}">
+    </head>
+
+    <body id="page-top" class="marg-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="#page-top">?QuiPrendQuoi¿</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#contact"><button type="button" class="btn btn-outline-warning   ">Se déconnecter</button></a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-primary bg-gradient text-white p-4 ">
+        <div class="container px-4 text-center w-75">
+            <h1 class="w-bolder">Bienvenue sur votre panel QuiPrendQuoi</h1>
+
+        </div>
+    </header>
+    <section class="statistics text-center">
+        <div class="data">
+            <div class="container">
+                <h2>Vos statistiques</h2>
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="stats">
+                            <p>{{ groupmodel_list.count }}</p>
+                            <h3>Groupes</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="stats">
+                            <p>{{ event_count }}</p>
+                            <h3>Evenements</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="stats">
+                            <p>3,260</p>
+                            <h3>Utilisateurs</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="stats">
+                            <p>95,350</p>
+                            <h3>Objets</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About section-->
+    <section id="about">
+        <div class="container px-4 p-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+
+
+
+
+                    <h2>Vos groupes <button type="button" class="btn btn-primary">Créer un groupe</button> </h2>
+                    {% block body_content %}
+                        <ul>
+                            {% if object_list %} <p>zadazd</p>  {% endif %}
+                            {% for object in object_list %}
+                                <li>
+                                    <p>1</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services section-->
+    <section class="bg-light" id="services">
+        <div class="container px-4 p-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Vos évenements <button type="button" class="btn btn-primary">Créer un Evenement</button> </h2>
+                    <div class="container">
+
+                        {% if object_list %} <p>zadazd</p>  {% endif %}
+
+                        {% for events in eventView %}
+                            *                                        {{ events.name }}
+                            *                                      </div>
+                            </div>
+                        {% endfor %}
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <!-- Contact section-->
+    <section id="contact">
+        <div class="container px-4 p-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Contactez nous!</h2>
+                    <p class="lead">En cas de problème merci de nous contacter sur cette page:<a class="nav-link" href="#contact"><button type="button" class="btn btn-info">Contact</button></a></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-4 bg-dark">
+        <div class="container px-4"><p class="m-0 text-center text-white">QuiPrendQuoi &copy; 2023</p></div>
+    </footer>
+
+    </body>
+    </html>
+    {% for object in object_list %}
+        {% for objectEvent in object.events.all %}
+
+        {% endfor %}
+    {% endfor %}
+    {i}
+
+
+<p>fin</p>
+
+{% with i=0 %}
+
+        {% for object in object_list %}
+
+               {% for objectEvent in object.events.all %}
+                                {{ forloop.counter }}
+                      {% endfor %}
+        {% endfor %}
+    <h1>c'est donc {{ forloop.counter }} car c'est {{ i }}</h1>
+
+{% endwith %}
+    </ul>

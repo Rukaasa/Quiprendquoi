@@ -1,0 +1,118 @@
+{% extends 'base/headerConnect.html' %}
+{% block content %}
+        <section class="statistics text-center">
+        <div class="data">
+            <div class="container">
+                <h2>Vos statistiques</h2>
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="stats">
+                            <p>{{ groups.count }}</p>
+                            <h3>Groupes</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="stats">
+                            <p>{{ events.count }}</p>
+                            <h3>Evenements</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="stats">
+                            <p>{{ Mymemberships.count }}</p>
+                            <h3>Invité</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="stats">
+                            <p>{{ item.count }}</p>
+                            <h3>Objets d'Invités</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="statistics2 text-center">
+        <div class="data2">
+            <div class="container">
+                <button onclick="window.location.href = '../group/create';"type="button" class="btn btn-primary">Créer un nouveau groupe</button>
+                <button onclick="window.location.href = '../group/join';"type="button" class="btn btn-primary">Rejoindre un groupe</button>
+
+            </div>
+
+            <div class="container">
+            </div>
+
+        </div>
+    </section>
+    <section id="advertisers" class="advertisers-service-sec pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="section-header text-center">
+                    <h2 class="fw-bold fs-1">
+                        Vous avez créer
+                        <span class="b-class-secondary"> {{ groups.count }} </span>groupes
+                    </h2>
+                    <p class="sec-icon"><i class="fa-solid fa-gear"></i></p>
+                </div>
+            </div>
+            <div class="row mt-5 mt-md-4 row-cols-1 row-cols-sm-1 row-cols-md-3 justify-content-center">
+                {% for object in groups %}
+                    <div class="col">
+                        <div class="service-card">
+                            <h3>{{ object.name }}</h3>
+                            <p>
+                                {{ object.description }}
+                            </p>
+                        <button onclick="window.location.href = 'group/{{ object.id }}/events/';"type="button" class="btn btn-primary">voir le groupe</button>
+                        <p>clé d'invitation: {{ object.key_invitation }}</p>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+        <section id="advertisers" class="advertisers-service-sec pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="section-header text-center">
+                    <h2 class="fw-bold fs-1">
+                        Vous avez rejoint
+                        <span class="b-class-secondary"> {{ groups_joins.count }} </span>groupes
+                    </h2>
+                    <p class="sec-icon"><i class="fa-solid fa-gear"></i></p>
+                </div>
+            </div>
+            <div class="row mt-5 mt-md-4 row-cols-1 row-cols-sm-1 row-cols-md-3 justify-content-center">
+                {% for group in groups_joins %}
+                    <div class="col">
+                        <div class="service-card">
+                            <h3>{{ group.name }}</h3>
+                            <p>
+                                {{ group.description }}
+                            </p>
+                        <button onclick="window.location.href = 'group/{{ group.id }}/events/';"type="button" class="btn btn-primary">voir le groupe</button>
+
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <footer class="py-4 bg-dark">
+        <div class="container px-4"><p class="m-0 text-center text-white">QuiPrendQuoi &copy; 2023</p></div>
+    </footer>
+
+    </body>
+    </html>
+{% endblock %}
+

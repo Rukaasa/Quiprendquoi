@@ -1,0 +1,35 @@
+  {% load static %}
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link rel="icon" type="image/x-icon" href="{% static 'templates/base/assets/favicon.ico' %}" />
+        <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/listingCard.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/stats.css' %}">
+    </head>
+    <body id="page-top" class="marg-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="/../">?QuiPrendQuoi¿</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/logout"><button type="button" class="btn btn-outline-warning">Se déconnecter</button></a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+        <header class=" bg-gradient text-white p-4">
+        <div class="margin-pageBanner container px-4 text-center w-75">
+            <h1 class="w-bolder">Bienvenue sur votre panel <span class="b-class-secondary">{{ user.username }}</span></h1>
+        </div>
+    </header>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+    </body>

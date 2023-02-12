@@ -1,0 +1,17 @@
+.marg-top
+{
+  margin-top: 3.5em;
+}
+
+.bg-homeBanner {
+  color: #0d6efd !important;
+  margin-top: 4.2em;
+        background-color: rgba(10, 83, 190, 0.05);
+
+}
+
+.margin-pageBanner {
+    margin-top: 1.5em;
+    color: rgb(33, 37, 41);
+
+}

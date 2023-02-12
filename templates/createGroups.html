@@ -1,0 +1,11 @@
+{% extends 'base/headerConnect.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2>Create Group</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Create Group">
+  </form>
+{% endblock %}

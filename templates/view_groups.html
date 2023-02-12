@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in groups %}
+        <tr>
+            <td>{{ group.name }}</td>
+            <td>{{ group.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

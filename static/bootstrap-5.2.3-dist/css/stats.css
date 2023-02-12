@@ -1,0 +1,41 @@
+.statistics2 .data2 {
+  background: rgba(255, 182, 23, 0.65);
+  color: #0d6efd;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+.statistics {
+  min-height: 300px;
+}
+
+.statistics .data {
+  background: #212529;
+  color: #e0e0e0;
+  min-height: 300px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.statistics h2 {
+  padding-bottom: 60px;
+}
+
+.statistics .stats {
+  margin-bottom: 30px;
+  transition: all 0.5s ease-in-out;
+}
+
+.statistics .stats:hover {
+  transform: scale(1.1);
+  color: #FFCF68;
+}
+
+.statistics p {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.statistics span {
+  font-size: 18px;
+}

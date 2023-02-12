@@ -1,0 +1,15 @@
+{% extends 'base/headerConnect.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+  <h2>Création d'évenement</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Créer l'évenement">
+  </form>
+
+{% endblock %}
