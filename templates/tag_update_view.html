@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% block  title %}Recettes{% endblock %}
+
+{% block body_content %}
+    <h1>mise a jours d'un tag</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">update</button>
+    </form>
+    <script>$(() => {
+        $('#recipe-search').submit(function () {
+            window.location('/recipes/search/'+$('#recipe-name').val())
+            return false
+        })
+    })</script>
+{% endblock %}

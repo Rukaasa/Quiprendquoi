@@ -1,0 +1,7 @@
+{% for group in groups %}
+    <p>{{ group.name }}</p>
+{% endfor %}
+
+{% for membership in memberships %}
+    <p>{{ membership.user.username }} is a member of {{ membership.group.name }}</p>
+{% endfor %}

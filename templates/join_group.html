@@ -1,0 +1,15 @@
+{% extends 'base/headerConnect.html' %}
+
+{% block content %}
+  <h1>Rejoindre un groupe</h1>
+  {% if error %}
+    <p style="color: red;">{{ error }}</p>
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <label for="key_invitation">Entrer une clé d'invitation:</label>
+    <input type="text" id="key_invitation" name="key_invitation">
+    <button type="submit">Rejoindre le groupe</button>
+  </form>
+{% endblock %}
+

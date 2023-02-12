@@ -1,0 +1,10 @@
+{% block  title %}Recettes{% endblock %}
+
+{% block body_content %}
+    <h1>{{ object.text }}</h1>
+    <ul>
+        {% for recipe in object.recipes.all %}
+            <li>{{ recipe }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
